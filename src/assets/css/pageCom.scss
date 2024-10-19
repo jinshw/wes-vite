@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.fd-fl {
+    float: left;
+}
+
+.fd-fr {
+    float: right;
+}
+.pageWrap {
+    height: calc(100% - 48px);
+    background: #fff;
+    border-radius: 8px;
+}
+.pageWrap-top {
+    height: 60px;
+    border-bottom: 1px solid #D1D4DC;
+    padding: 12px
+}
+
+.pageWrap-main {
+    height: calc(100% - 60px);
+    padding: 12px;
+}

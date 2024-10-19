@@ -1,0 +1,1 @@
+{"asset": {"version": "1.0", "producer": "cennavi"}, "geometricError": 2.2779886471848565, "root": {"boundingVolume": {"box": [274.7638931274414, 690.8268127441406, 0.0, 182.81462860107422, 0.0, 0.0, 0.0, -99.98519897460938, 0.0, 0.0, 0.0, 0.0]}, "geometricError": 0.2847490587154683, "refine": "REPLACE", "content": {"url": "test_Tile_3_9.b3dm"}, "children": null}}

@@ -1,0 +1,48 @@
+
+variables:
+  SERVER_PORT: 8018
+  PACKAGE_COMMAND: sudo pnpm install
+  RUN_COMMAND: sudo yarn build:stage
+  PRO_RUN_COMMAND: sudo pnpm build:prod
+  PROJECT_NAME: nt
+  WEB_NGINX_PATH: /soft/workspace/docker_workspace/nginx/html
+
+stages:
+  - build
+  - probuild
+  - deploy
+  - uploadfile
+
+
+##正式服务器部署流程
+probuild:
+  stage: build
+  script:
+    - echo "Building the nantong-vue"
+    - pnpm install
+    - pnpm build
+  artifacts:
+    expire_in: 10 day
+    paths:
+      - ./dist
+  only:
+    - main
+  tags:
+    - web23-test
+uploadfile:
+  stage: deploy
+  script:
+    - pwd
+    - mv dist ${PROJECT_NAME}
+    - tar -cvf ${PROJECT_NAME}.tar ${PROJECT_NAME}
+##针对内网服务器无法部署到正式环境。
+##通过拷贝到nginx的download目录，通过nginx文件映射。手动下载文件后，再手动部署。
+    - scp ${PROJECT_NAME}.tar root@192.168.136.23:/soft/workspace/docker_workspace/nginx/html
+    - ssh -t root@192.168.136.23 "cd /soft/workspace/docker_workspace/nginx/html && tar -xvf nt.tar && rm -f nt.tar"
+    - pwd
+
+  only:
+    - main
+  tags:
+    - web23-test
+    

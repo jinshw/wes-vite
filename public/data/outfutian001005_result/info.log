@@ -1,0 +1,13 @@
+2023-12-05 08:48:20,288 - root - WARNING - 416 - batch_process - MainProcess - /APP/data/outfutian001005/test下没有gltf文件, 跳过
+2023-12-05 08:48:20,300 - root - INFO - 438 - batch_process - MainProcess - 共有1个转换任务
+2023-12-05 08:48:20,301 - root - INFO - 439 - batch_process - MainProcess - 开始批处理工作
+2023-12-05 08:48:20,301 - root - INFO - 310 - batch_process - MainProcess - 进程数为6
+2023-12-05 08:48:20,324 - root - INFO - 180 - batch_process - ForkPoolWorker-1 - 开始处理/APP/data/outfutian001005/test/test.obj
+2023-12-05 08:48:23,444 - root - INFO - 223 - batch_process - ForkPoolWorker-1 - /APP/data/outfutian001005/test/test.obj开始3dtiles切分
+2023-12-05 08:48:23,649 - root - INFO - 136 - batch_process - ForkPoolWorker-1 - 开始执行命令: [/APP/software/blender-3.1.2-linux-x64/blender -b --python /APP/software/obj23dtiles/main.py -- -i /APP/data/outfutian001005_result/testTMP/ -n test.obj -x /APP/data/outfutian001005_result/testTMP/test.xml -j /APP/data/semantiNo.json -z 3 -r 0.005 -f Y -u Z]
+2023-12-05 08:49:35,460 - root - INFO - 236 - batch_process - ForkPoolWorker-1 - /APP/data/outfutian001005/test/test.obj3dtiles切分处理完毕
+2023-12-05 08:49:35,463 - root - INFO - 244 - batch_process - ForkPoolWorker-1 - /APP/data/outfutian001005_result/test创建成功
+2023-12-05 08:49:35,679 - root - INFO - 249 - batch_process - ForkPoolWorker-1 - /APP/data/outfutian001005/test/test.obj导出成功
+2023-12-05 08:49:35,803 - root - INFO - 267 - batch_process - ForkPoolWorker-1 - /APP/data/outfutian001005/test/test.obj处理已完成
+2023-12-05 08:49:35,804 - root - INFO - 319 - batch_process - MainProcess - 已完成 1 / 1
+2023-12-05 08:49:35,809 - root - INFO - 443 - batch_process - MainProcess - 完成, 转换工作已结束. 用时75.53587s

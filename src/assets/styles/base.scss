@@ -1,0 +1,209 @@
+$imgComPath: "../../assets/icons/svg/";
+//------------------------------------色值常量-----------------------------------
+
+//背景色值
+$color-card-bg: rgba(16, 29, 64, 0.6);
+$color-card-linear-bg: linear-gradient(180deg, rgba(42, 53, 108, 0.8) 0%, rgba(29, 39, 87, 0.8) 100%);
+$color-panel-left-linear-bg: linear-gradient(90deg, rgba(32, 37, 45, 0.8) 0%, rgba(32, 37, 45, 0.8) 60%, rgba(32, 37, 45, 0) 100%);
+$color-panel-right-linear-bg: linear-gradient(270deg, rgba(32, 37, 45, 0.8) 0%, rgba(32, 37, 45, 0.8) 60%, rgba(32, 37, 45, 0) 100%);
+// 标题颜色
+$text-color-title: #ffffff;
+// 默认字体颜色
+$text-color-default: #ffffff;
+//小型字体颜色
+$text-color-small: rgba(255, 255, 255, 0.6);
+// 内容框背景色
+$content-box-bg-color: rgba(7, 22, 36, 0.8);
+
+$color-bg-popup: #1d2757;
+$color-font-white: #ffffff;
+$color-theme: #00fffc;
+$color-theme-sub: #0098ff;
+$color-font-auxiliary: #b9d6ff;
+$color-font-error: #ef5741;
+$color-font-disabled: #959595;
+//面板最小宽度
+/* prettier-ignore */
+$sidebar-panel-minwidth: 340PX;
+/* prettier-ignore */
+$sidebar-panel-shadow-minwidth: 450PX;
+//------------------------------------ui theme-----------------------------------
+@forward "element-plus/theme-chalk/src/common/var.scss" with ($colors: ("primary": ("base": #ffffff)),
+  $text-color: ("primary": #ffffff,
+    "regular": rgba(255, 255, 255, 0.6),
+    "disabled": rgba(5, 119, 176, 1),
+    "light": #ffffff),
+  $border-color: ("": rgba(74, 111, 113, 1),
+    "light": rgba(74, 111, 113, 1),
+    "lighter": rgba(255, 255, 255, 0.2)),
+  $fill-color: ("blank": rgba(11, 35, 42, 0.9),
+    "light": rgba(17, 77, 153, 0.6)),
+  $bg-color: ("": rgba(11, 35, 42, 0.9),
+    "overlay": rgba(25, 44, 51, 0.9)),
+  $select: ("border-color-hover": rgba(43, 77, 238, 0.4),
+    "close-hover-color": rgba(43, 77, 238, 0.4),
+    "input-color": rgba(255, 255, 255, 0.4),
+    "input-focus-border-color": rgba(43, 77, 238, 0.4)),
+  $input: ("text-color": rgba(255, 255, 255, 1),
+    "hover-border": rgba(0, 148, 155, 1),
+    "focus-border": rgba(0, 148, 155, 1),
+    "border-color": rgba(0, 152, 255, 0.4),
+    "bg-color": rgba(21, 31, 43, 0.8),
+    "icon-color": rgba(255, 255, 255, 0.4),
+    "placeholder-color": rgba(255, 255, 255, 0.4),
+    "hover-border-color": rgba(21, 31, 43, 0.8),
+    "clear-hover-color": rgba(21, 31, 43, 0.8),
+    "focus-border-color": rgba(21, 31, 43, 0.8)),
+  $dropdown: ("menuItem-hover-fill": rgba(155, 196, 199, 0.2),
+    "menuItem-hover-color": #ffffff),
+  $datepicker: ("off-text-color": rgba(255, 255, 255, 0.38),
+    "hover-text-color": rgba(255, 255, 255, 1),
+    "header-text-color": rgba(255, 255, 255, 0.8),
+    "active-color": rgba(43, 77, 238, 1)),
+  $switch: ("on-color": rgba(0, 152, 255, 1),
+    "off-color": rgba(77, 78, 81, 1),
+    "border-color": transparent));
+
+//------------------------------------自定义字体-----------------------------------
+
+@font-face {
+  font-family: "DIN-Medium";
+  src: url("../../assets/fonts/DIN-Medium.otf");
+}
+
+@font-face {
+  font-family: "PingFang-Light";
+  src: url("../../assets/fonts/PingFang-Light.ttf");
+}
+
+@font-face {
+  font-family: "PangMenZhengDao-3";
+  src: url("../../assets/fonts/PangMenZhengDao-2.ttf");
+}
+@font-face {
+  font-family: "sanjiyunheijianti";
+  src: url("../../assets/fonts/sanjiyunheijianti.ttf");
+}
+
+
+//------------------------------------图片引入-----------------------------------
+
+@mixin importBGImg($imgUrl) {
+  background: url("" + $imgUrl) no-repeat;
+  background-size: 100% 100%;
+}
+
+.bold-font {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+//------------------------------------CesiumDraw面板-----------------------------------
+$bg-color:rgba(38,51,67,0.5);
+$scroll-color:rgba(7, 119, 128, 0.2);
+$color:#FFFFFF;
+$color-l:#84F8FB;
+$font-color:$color;
+$selected-color:#84F8FB;
+$border-color:rgba(157,163,175,0.5);
+$devision-color:#DCDFE6;
+$b-radius:4px;
+$draw-panel-width:400px;
+$hover-color:#84F8FB;
+$title-height:46px;
+$item-margin:0 5px;
+$item-height:40px;
+$padding:0 5px;
+$font-size:16px;
+//跟随鼠标的提示信息
+.cursor-tip-class{
+    position : fixed;
+    // border : 1px $border-color solid;
+    height : 30px;
+    line-height : 30px;
+    padding-left : 10px;
+    padding-right : 20px;
+    background-color : $bg-color;
+    color : $font-color;
+    border-radius : $b-radius;
+    pointer-events : none;
+    z-index : 999999;
+    min-width:  150px;
+    font-size: $font-size;
+}
+//关闭按钮
+.closebtn{
+  text-align: center;  
+  display: inline-block!important;
+  font-size: $font-size;
+  color:$color;
+  // margin-top: 13px!important;
+  // margin-right: 13px!important;
+  cursor: pointer;
+  float: right;
+  &:hover {
+    color: #FF0000;
+  }
+}
+#createMerkerPanel{
+  .el-select{
+    .el-input{
+      height: 40px;
+      font-size: 16px;
+    }
+    &:hover{
+      border-color: transparent;
+    }
+  }
+}
+//滚动条
+*{
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 5px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 2px;
+    box-shadow: inset 0 0 2px $scroll-color;
+    background: $scroll-color;
+  }
+  &::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow: inset 0 0 2px $bg-color;
+    border-radius: 2px;
+    background: $bg-color;
+  }
+}
+//气泡
+.marker-popWin-class {
+  min-width: 200px;
+  height: 73px;
+  position: fixed;
+  color: $font-color;
+  background-color: $bg-color;
+  text-align: left;
+  border-radius: $b-radius;
+  font-size: $font-size;
+  visibility: visible;
+  // border: 1px solid $border-color;
+  box-sizing: border-box;
+  padding: 0 12px;
+  span{
+    margin-top: 12px;
+    display: block;
+  }
+  .arrow {
+    position: absolute;
+    top: 73px;
+    left: 0px;
+    width: 0px;
+    height: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-width: 10px;
+    border-style: solid;
+    border-color: $bg-color transparent transparent transparent;
+  }
+}
